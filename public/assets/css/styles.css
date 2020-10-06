@@ -2,10 +2,6 @@
   margin-bottom: 0px !important;
 }
 
-header.masthead h1 {
-  /*line-height: 2vw;*/
-}
-
 .site {
   display: flex;
   min-height: 100vh;
@@ -22,43 +18,31 @@ header.masthead h1 {
     margin-top: 10px !important;
     margin-bottom: 0px !important;
   }
-}
-
-@media screen and (max-width: 768px) {
+  .medium-text {
+    font-size: 15px !important;
+  }
   #header {
     padding-top: 15px !important;
     padding-bottom: 15px !important;
   }
-}
-
-@media screen and (max-width: 768px) {
   #logo {
     width: 63px !important;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .medium-text {
-    font-size: 15px !important;
-  }
-}
 
 @media (min-width: 769px) {
   .medium-text {
     font-size: 30px !important;
   }
-}
-
-@media (min-width: 769px) {
   .big-text {
     font-size: 50px !important;
   }
 }
 
+
 .col-md-4.mb-5.mb-lg-0 {
   margin-bottom: 0px !important;
 }
 
-.img-fluid.d-block.mx-auto.mb-5 {
-}
 
