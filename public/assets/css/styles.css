@@ -25,6 +25,9 @@
     font-size:11px;
     padding:4px 4px;
   }
+  .table-text {
+    font-size:11px !important;
+  }
   #header {
     padding-top: 15px !important;
     padding-bottom: 15px !important;
