@@ -19,6 +19,7 @@
   "homepage": "https://github.com/andcor02/Teeny-URL#readme",
   "dependencies": {
     "clipboard": "^2.0.6",
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mongoose": "^5.10.8",

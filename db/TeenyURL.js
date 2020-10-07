@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const TeenyID = require('shortid')
+require('dotenv').config()
 
 const shortUrlSchema = new mongoose.Schema({
   full: {
