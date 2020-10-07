@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Teeny URL: Andrea Corrado</title>
+    <title>Teeny URL!</title>
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
     </header>
     <section class="content" style="padding: 0;margin-bottom: 0px;margin-top: 20px;">
         <div style="padding-bottom: 50px;" class="container">
-            <form action="/shorURL" method="POST">
+            <form action="/teenyget" method="POST">
                     <div class="form-row">
                         <div class="col-10">
                             <input required class="form-control form-control-lg" placeholder="Make my URL Teeny!" name="fullUrl" id="fullUrl" style="margin-top: 2px !important;">
@@ -38,12 +38,12 @@
 
         <div class="container">
                 <ul style="flex-wrap: wrap; word-wrap: break-word; margin-bottom: 50px; " class="list-group d-flex">
-                    <% shorURL.forEach(shortUrl => { %>
+                    <% teenyget.forEach(teenyget => { %>
                         <li class="list-group-item">
-                            <span class="long-link"><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></span>
+                            <span class="long-link"><a href="<%= teenyget.full %>"><%= teenyget.full %></a></span>
                             <span class=" float-right ">
-                                <a href="<%= shortUrl.short %>">tier.app/<%= shortUrl.short %></a>
-                                <span class="badge badge-primary badge-pill"><%= shortUrl.clicks %></span>
+                                <a href="<%= teenyget.short %>">tier.app/<%= teenyget.short %></a>
+                                <span class="badge badge-primary badge-pill"><%= teenyget.clicks %></span>
                             </span>
                         </li>
                     <% }) %>

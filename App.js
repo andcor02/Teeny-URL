@@ -3,8 +3,6 @@ const mongoose = require('mongoose')
 const TeenyURL = require('./db/TeenyURL')
 const app = express()
 
-var str1 = "Hello ";
-
 mongoose.connect('mongodb://localhost/TeenyURL', {
   useNewUrlParser: true, useUnifiedTopology: true
 })
@@ -13,26 +11,26 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 
 app.get('/', async (req, res) => {
-  const shorURL = await TeenyURL.find()
-  res.render('index', { shorURL: shorURL })
+  const teenyget = await TeenyURL.find()
+  res.render('index', { teenyget: teenyget })
 })
 
 app.use(express.static(__dirname + '/public'));
 
-app.post('/shorURL', async (req, res) => {
+app.post('/teenyget', async (req, res) => {
   await TeenyURL.create({ full: req.body.fullUrl })
 
   res.redirect('/')
 })
 
-app.get('/:shortUrl', async (req, res) => {
-  const shortUrl = await TeenyURL.findOne({ short: req.params.shortUrl })
-  if (shortUrl == null) return res.sendStatus(404)
+app.get('/:teenyURL', async (req, res) => {
+  const teenyURL = await TeenyURL.findOne({ short: req.params.teenyURL })
+  if (teenyURL == null) return res.sendStatus(404)
 
-  shortUrl.clicks++
-  shortUrl.save()
+  teenyURL.clicks++
+  teenyURL.save()
 
-  res.redirect(shortUrl.full)
+  res.redirect(teenyURL.full)
 })
 
 app.listen(process.env.PORT || 3000);
