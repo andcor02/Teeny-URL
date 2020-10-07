@@ -1,9 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const ShortUrl = require('./models/shortUrl')
+const TeenyURL = require('./db/TeenyURL')
 const app = express()
 
-mongoose.connect('mongodb://localhost/urlShortener', {
+var str1 = "Hello ";
+
+mongoose.connect('mongodb://localhost/TeenyURL', {
   useNewUrlParser: true, useUnifiedTopology: true
 })
 
@@ -11,20 +13,20 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 
 app.get('/', async (req, res) => {
-  const shortUrls = await ShortUrl.find()
-  res.render('index', { shortUrls: shortUrls })
+  const shorURL = await TeenyURL.find()
+  res.render('index', { shorURL: shorURL })
 })
 
 app.use(express.static(__dirname + '/public'));
 
-app.post('/shortUrls', async (req, res) => {
-  await ShortUrl.create({ full: req.body.fullUrl })
+app.post('/shorURL', async (req, res) => {
+  await TeenyURL.create({ full: req.body.fullUrl })
 
   res.redirect('/')
 })
 
 app.get('/:shortUrl', async (req, res) => {
-  const shortUrl = await ShortUrl.findOne({ short: req.params.shortUrl })
+  const shortUrl = await TeenyURL.findOne({ short: req.params.shortUrl })
   if (shortUrl == null) return res.sendStatus(404)
 
   shortUrl.clicks++

@@ -4,7 +4,7 @@
   "description": "URL shorten app",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon App.js",
+    "start": "nodemon App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,11 +22,9 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mongoose": "^5.10.8",
+    "mongoose-nanoid": "^1.0.4",
+    "nanoid": "^3.1.12",
     "nodemon": "^2.0.4",
     "shortid": "^2.2.15"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
   }
-  
 }
