@@ -1,8 +1,8 @@
 # Teeny URL
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+<img src="public/assets/img/teeny.svg" width="150">
 
-<img src="public/assets/img/teeny.svg" width="100">
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 TeenyURL is a simple URL shortener. The tools used are: 
   - Bootstrap 4 framework frontend
