@@ -1,8 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const TeenyURL = require('./db/TeenyURL')
+const TeenyURL = require('./mongoose/TeenyURL')
 const app = express()
 require('dotenv').config()
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/TeenyURL', { //heroku db connect
+  useNewUrlParser: true, useUnifiedTopology: true //remove deprecated warnings
+})
 
 TeenyURL.collection.deleteMany({}) //delete collection on start of app
 
