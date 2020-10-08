@@ -22,6 +22,8 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
     "mongoose": "^5.10.8",
     "mongoose-nanoid": "^1.0.4",
     "nanoid": "^3.1.12",
